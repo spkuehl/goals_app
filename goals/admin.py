@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Goal
 
-# Register your models here.
+class GoalAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Goal, GoalAdmin)
