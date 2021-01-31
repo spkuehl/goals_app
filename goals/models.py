@@ -28,3 +28,13 @@ class Goal(models.Model):
 
     def __str__(self):
         return '{}: {}'.format(self.user, self.name)
+
+
+class GoalLog(models.Model):
+    goal = models.ForeignKey(Goal, on_delete=models.CASCADE)
+    date_added = models.DateField(default=date.today, null=True, blank=True)
+    duration = models.PositiveIntegerField(null=True, blank=True)
+    notes = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return '{}: {}'.format(self.goal, self.date_added)
