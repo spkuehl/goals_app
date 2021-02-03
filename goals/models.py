@@ -3,25 +3,25 @@ from django.contrib.auth.models import User
 from datetime import date
 from multiselectfield import MultiSelectField
 
+FREQUENCY = (('daily', 'Daily'),
+            ('mon', 'Monday'),
+            ('tues', 'Tuesday'),
+            ('wed', 'Wednesday'),
+            ('thurs', 'Thursday'),
+            ('fri', 'Friday'),
+            ('sat', 'Saturday'),
+            ('sun', 'Sunday'),
+            ('weekly', 'Weekly'),
+            ('monthly', 'Monthly'),
+            ('yearly', 'Yearly'))
+
+
 class Goal(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=256)
     start_date = models.DateField(default=date.today, null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
-    total_time = models.PositiveIntegerField(null=True, blank=True)
-
-    FREQUENCY = (('daily', 'Daily'),
-                ('mon', 'Monday'),
-                ('tues', 'Tuesday'),
-                ('wed', 'Wednesday'),
-                ('thurs', 'Thursday'),
-                ('fri', 'Friday'),
-                ('sat', 'Saturday'),
-                ('sun', 'Sunday'),
-                ('weekly', 'Weekly'),
-                ('monthly', 'Monthly'),
-                ('yearly', 'Yearly'))
-
+    total_time = models.PositiveIntegerField(null=True, blank=True, help_text="Total time in hours, E.G. 10000 hours")
     check_in_frequency = MultiSelectField(choices=FREQUENCY)
     reminder_frequency = MultiSelectField(choices=FREQUENCY)
     active = models.BooleanField(default=True)
