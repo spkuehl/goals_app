@@ -1,0 +1,44 @@
+[
+{
+    "model": "goals.goal",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "name": "Practice Chess",
+        "start_date": "2021-02-08",
+        "end_date": "2022-02-08",
+        "total_time": 100,
+        "check_in_frequency": "",
+        "reminder_frequency": "",
+        "active": true
+    }
+},
+{
+    "model": "goals.goal",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "name": "Practice Piano",
+        "start_date": "2021-02-08",
+        "end_date": null,
+        "total_time": null,
+        "check_in_frequency": "",
+        "reminder_frequency": "",
+        "active": true
+    }
+},
+{
+    "model": "goals.goal",
+    "pk": 6,
+    "fields": {
+        "user": 2,
+        "name": "Practice swimming",
+        "start_date": "2021-02-08",
+        "end_date": null,
+        "total_time": 12,
+        "check_in_frequency": "",
+        "reminder_frequency": "",
+        "active": true
+    }
+}
+]

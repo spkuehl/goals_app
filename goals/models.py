@@ -22,8 +22,8 @@ class Goal(models.Model):
     start_date = models.DateField(default=date.today, null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     total_time = models.PositiveIntegerField(null=True, blank=True, help_text="Total time in hours, E.G. 10000 hours")
-    check_in_frequency = MultiSelectField(choices=FREQUENCY)
-    reminder_frequency = MultiSelectField(choices=FREQUENCY)
+    check_in_frequency = MultiSelectField(choices=FREQUENCY, null=True, blank=True)
+    reminder_frequency = MultiSelectField(choices=FREQUENCY, null=True, blank=True)
     active = models.BooleanField(default=True)
 
     def __str__(self):
