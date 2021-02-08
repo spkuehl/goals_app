@@ -2,7 +2,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth.models import User
-from .models import Goal
+from goals.models import Goal
 
 class GoalTests(APITestCase):
     fixtures = ["user.json", "goal.json"]
