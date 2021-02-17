@@ -30,7 +30,7 @@ class GoalTests(APITestCase):
         self.assertEqual(Goal.objects.count(), pre_test_count+1)
         self.assertEqual(Goal.objects.last().name, 'Practice Chess')
 
-    def test_create_goal_no_auth(self):
+    def test_can_not_create_goal_no_auth(self):
         """
         Ensure we can not create a new goal object without authentication.
         """
@@ -57,7 +57,7 @@ class GoalTests(APITestCase):
         updated_goal = Goal.objects.filter(user=self.user).last()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_get_goal_no_auth(self):
+    def test_can_not_get_goal_no_auth(self):
         """
         Ensure we can not a goal object if no authentication.
         """
@@ -67,7 +67,7 @@ class GoalTests(APITestCase):
         updated_goal = Goal.objects.filter(user=self.user).last()
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_get_goal_not_owner(self):
+    def test_cant_not_get_goal_not_owner(self):
         """
         Ensure we can not a goal object if not goal owner.
         """

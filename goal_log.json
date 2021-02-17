@@ -1,0 +1,32 @@
+[
+{
+    "model": "goals.goallog",
+    "pk": 1,
+    "fields": {
+        "goal": 4,
+        "date_added": "2021-02-08",
+        "duration": 90,
+        "notes": ""
+    }
+},
+{
+    "model": "goals.goallog",
+    "pk": 2,
+    "fields": {
+        "goal": 5,
+        "date_added": "2021-02-08",
+        "duration": 120,
+        "notes": ""
+    }
+},
+{
+    "model": "goals.goallog",
+    "pk": 3,
+    "fields": {
+        "goal": 6,
+        "date_added": "2021-02-08",
+        "duration": 100,
+        "notes": ""
+    }
+}
+]
