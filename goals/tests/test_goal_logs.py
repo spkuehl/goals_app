@@ -103,9 +103,3 @@ class GoalLogTests(APITestCase):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(user_goal_logs), len(response.data))
-
-    def test_get_goal_log_list_for_one_goal(self):
-        """
-        Ensure we can goal log object list for a specific goal.
-        """
-        pass

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from goals.models import Goal, GoalLog
 
 class GoalTests(APITestCase):
-    fixtures = ["user.json", "goal.json"]
+    fixtures = ["user.json", "goal.json", "goal_log.json"]
 
     def setUp(self):
         self.user = User.objects.get(username='lauren')
@@ -106,9 +106,10 @@ class GoalTests(APITestCase):
         """
         Ensure we can get goal logs for a goal.
         """
-        goal = Goal.objects.get(pk=5)
-        goal_log_count = GoalLog.objects.filter(goal=goal)
-        self.assertEqual(
-            goal_log_count,
-            reverse('goals-detail-goal-list', args=[goal.pk])
-            )
+        self.client.force_authenticate(user=self.user2)
+        goal = Goal.objects.filter(user=self.user2).last()
+        goal_log_count_from_db = GoalLog.objects.filter(goal=goal).count()
+        url = reverse('goals-goal-log-list', args=[goal.pk])
+        response = self.client.get(url, format='json')
+        goal_log_count_from_api = len(response.data)
+        self.assertEqual(goal_log_count_from_db, goal_log_count_from_api)
