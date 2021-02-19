@@ -2,10 +2,10 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth.models import User
-from goals.models import Goal
+from goals.models import Goal, GoalLog
 
 class GoalTests(APITestCase):
-    fixtures = ["user.json", "goal.json"]
+    fixtures = ["user.json", "goal.json", "goal_log.json"]
 
     def setUp(self):
         self.user = User.objects.get(username='lauren')
@@ -101,3 +101,15 @@ class GoalTests(APITestCase):
         response = self.client.get(self.url_list)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(user_goals), len(response.data))
+
+    def test_get_goal_log_list_one_goal(self):
+        """
+        Ensure we can get goal logs for a goal.
+        """
+        self.client.force_authenticate(user=self.user2)
+        goal = Goal.objects.filter(user=self.user2).last()
+        goal_log_count_from_db = GoalLog.objects.filter(goal=goal).count()
+        url = reverse('goals-goal-log-list', args=[goal.pk])
+        response = self.client.get(url, format='json')
+        goal_log_count_from_api = len(response.data)
+        self.assertEqual(goal_log_count_from_db, goal_log_count_from_api)
