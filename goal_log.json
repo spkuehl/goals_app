@@ -23,6 +23,26 @@
     "model": "goals.goallog",
     "pk": 3,
     "fields": {
+        "goal": 5,
+        "date_added": "2021-02-08",
+        "duration": 120,
+        "notes": ""
+    }
+},
+{
+    "model": "goals.goallog",
+    "pk": 4,
+    "fields": {
+        "goal": 5,
+        "date_added": "2021-02-08",
+        "duration": 120,
+        "notes": ""
+    }
+},
+{
+    "model": "goals.goallog",
+    "pk": 5,
+    "fields": {
         "goal": 6,
         "date_added": "2021-02-08",
         "duration": 100,

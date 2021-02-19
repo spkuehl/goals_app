@@ -2,7 +2,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth.models import User
-from goals.models import Goal
+from goals.models import Goal, GoalLog
 
 class GoalTests(APITestCase):
     fixtures = ["user.json", "goal.json"]
@@ -101,3 +101,14 @@ class GoalTests(APITestCase):
         response = self.client.get(self.url_list)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(user_goals), len(response.data))
+
+    def test_get_goal_log_list_one_goal(self):
+        """
+        Ensure we can get goal logs for a goal.
+        """
+        goal = Goal.objects.get(pk=5)
+        goal_log_count = GoalLog.objects.filter(goal=goal)
+        self.assertEqual(
+            goal_log_count,
+            reverse('goals-detail-goal-list', args=[goal.pk])
+            )
