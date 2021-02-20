@@ -48,5 +48,25 @@
         "duration": 100,
         "notes": ""
     }
+},
+{
+    "model": "goals.goallog",
+    "pk": 6,
+    "fields": {
+        "goal": 6,
+        "date_added": "2021-02-08",
+        "duration": 100,
+        "notes": ""
+    }
+},
+{
+    "model": "goals.goallog",
+    "pk": 7,
+    "fields": {
+        "goal": 6,
+        "date_added": "2021-02-08",
+        "duration": 100,
+        "notes": ""
+    }
 }
 ]
