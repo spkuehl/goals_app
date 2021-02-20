@@ -57,6 +57,6 @@ class GoalLogViewset(viewsets.ModelViewSet):
         """
         user = self.request.user
         if user.is_superuser:
-            return GoalLog.objects.filter(goal__user=user)
+            return GoalLog.objects.all()
         else:
             return GoalLog.objects.filter(goal__user=user)

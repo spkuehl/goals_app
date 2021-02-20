@@ -5,10 +5,12 @@ from rest_framework import fields, serializers
 
 
 class GoalSerializer(serializers.ModelSerializer):
+    duration_completed = serializers.ReadOnlyField()
 
     class Meta:
         model = Goal
         fields = '__all__'
+        extra_fields = ['duration_completed']
 
 
 class GoalLogSerializer(serializers.ModelSerializer):

@@ -14,6 +14,16 @@ class Goal(models.Model):
     def __str__(self):
         return '{}: {}'.format(self.user, self.name)
 
+    @property
+    def duration_completed(self):
+        goal_logs = GoalLog.objects.filter(goal=self)
+        duration = 0
+        if goal_logs:
+            for g in goal_logs:
+                if g.duration:
+                    duration = duration + g.duration
+        return duration
+
 
 class GoalLog(models.Model):
     goal = models.ForeignKey(Goal, on_delete=models.CASCADE)
