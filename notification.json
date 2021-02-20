@@ -1,0 +1,167 @@
+[
+{
+    "model": "notifications.notification",
+    "pk": 1,
+    "fields": {
+        "goal": 4,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "quarterly",
+        "day_of_the_week": "thurs",
+        "time_to_notify": "13:00:00",
+        "type": "reminder",
+        "active": true
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 2,
+    "fields": {
+        "goal": 4,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "monthly",
+        "day_of_the_week": "sun",
+        "time_to_notify": "13:00:00",
+        "type": "reminder",
+        "active": true
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 3,
+    "fields": {
+        "goal": 4,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "mon,wed,fri",
+        "time_to_notify": "13:00:00",
+        "type": "reminder",
+        "active": true
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 4,
+    "fields": {
+        "goal": 4,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "wed",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": true
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 5,
+    "fields": {
+        "goal": 5,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "fri",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": true
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 6,
+    "fields": {
+        "goal": 5,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "fri",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": true
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 7,
+    "fields": {
+        "goal": 5,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "fri",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": false
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 8,
+    "fields": {
+        "goal": 4,
+        "user": 1,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "fri",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": false
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 9,
+    "fields": {
+        "goal": 6,
+        "user": 2,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "fri",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": false
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 10,
+    "fields": {
+        "goal": 6,
+        "user": 2,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "quarterly",
+        "day_of_the_week": "fri",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": true
+    }
+},
+{
+    "model": "notifications.notification",
+    "pk": 11,
+    "fields": {
+        "goal": 6,
+        "user": 2,
+        "start_date": "2021-02-20",
+        "end_date": "2022-02-20",
+        "frequency": "weekly",
+        "day_of_the_week": "mon,tues,wed,thurs,fri",
+        "time_to_notify": "13:00:00",
+        "type": "check_in",
+        "active": true
+    }
+}
+]
