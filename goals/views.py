@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 from .models import Goal, GoalLog
 from .permissions import IsAdminOrIsSelf
 from .serializers import GoalSerializer, GoalLogSerializer
+from notifications.models import Notification
+from notifications.serializers import NotificationSerializer
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -32,6 +34,13 @@ class GoalViewset(viewsets.ModelViewSet):
         goal_logs = GoalLog.objects.filter(goal=goal)
         serialized_goal_logs = GoalLogSerializer(goal_logs, many=True)
         return Response(serialized_goal_logs.data)
+
+    @action(detail=True, url_path="notification-list")
+    def notification_list(self, request, pk=None):
+        goal = self.get_object()
+        notifications = Notification.objects.filter(goal=goal)
+        serialized_notifications = NotificationSerializer(notifications, many=True)
+        return Response(serialized_notifications.data)
 
 
 class GoalLogViewset(viewsets.ModelViewSet):
