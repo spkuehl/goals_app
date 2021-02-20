@@ -8,8 +8,6 @@
         "start_date": "2021-02-08",
         "end_date": "2022-02-08",
         "total_time": 100,
-        "check_in_frequency": "",
-        "reminder_frequency": "",
         "active": true
     }
 },
@@ -22,8 +20,6 @@
         "start_date": "2021-02-08",
         "end_date": null,
         "total_time": null,
-        "check_in_frequency": "",
-        "reminder_frequency": "",
         "active": true
     }
 },
@@ -36,8 +32,6 @@
         "start_date": "2021-02-08",
         "end_date": null,
         "total_time": 12,
-        "check_in_frequency": "",
-        "reminder_frequency": "",
         "active": true
     }
 }
