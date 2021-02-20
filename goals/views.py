@@ -21,7 +21,10 @@ class GoalViewset(viewsets.ModelViewSet):
         for the currently authenticated user.
         """
         user = self.request.user
-        return Goal.objects.filter(user=user)
+        if user.is_superuser:
+            return Goal.objects.all()
+        else:
+            return Goal.objects.filter(user=user)
 
     @action(detail=True, url_path="goal-log-list")
     def goal_log_list(self, request, pk=None):
@@ -44,4 +47,7 @@ class GoalLogViewset(viewsets.ModelViewSet):
         for the currently authenticated user.
         """
         user = self.request.user
-        return GoalLog.objects.filter(goal__user=user)
+        if user.is_superuser:
+            return GoalLog.objects.filter(goal__user=user)
+        else:
+            return GoalLog.objects.filter(goal__user=user)

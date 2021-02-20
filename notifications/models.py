@@ -23,6 +23,11 @@ DAY_OF_THE_WEEK = (
                 ('sun', 'Sunday')
             )
 
+NOTIFICATION_TYPE = (
+                ('reminder', 'Reminder'),
+                ('check_in', 'Check In')
+            )
+
 class Notification(models.Model):
     goal = models.ForeignKey(Goal, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -31,6 +36,7 @@ class Notification(models.Model):
     frequency = MultiSelectField(choices=FREQUENCY, null=True, blank=True)
     day_of_the_week = MultiSelectField(choices=DAY_OF_THE_WEEK, null=True, blank=True)
     time_to_notify = models.TimeField(null=True, blank=True)
+    type = models.CharField(max_length=30, choices=NOTIFICATION_TYPE)
     active = models.BooleanField(default=False)
 
     def __str__(self):
